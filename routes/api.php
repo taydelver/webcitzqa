@@ -21,7 +21,7 @@ Route::post('/create/storefront', 'StorefrontController@create')->middleware('au
 
 // // Route::get('/questions/{id}', 'QuestionsController@all')->middleware('client');
 // Route::post('/storefront/{id}/create/question', 'QuestionsController@create')->middleware('client');
-// Route::get('/test-email', 'QuestionsController@testEmail');
+Route::get('/test-email', 'QuestionsController@testEmail');
 
 
 

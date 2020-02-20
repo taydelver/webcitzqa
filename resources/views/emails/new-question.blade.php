@@ -39,12 +39,16 @@
                     {{ $question->contact_email }}
                 </div>
                 <div class="info-item">
-                    <span class="label">Product:</span>
+                    <span class="label">Product Name:</span>
                     {{ $question->product_name }}
                 </div>
                 <div class="info-item">
+                    <span class="label">Product SKU:</span>
+                    {{ $question->product_sku }}
+                </div>
+                <div class="info-item">
                     <span class="label">Date:</span>
-                    {{ $question->post_date }}
+                    {{ $question->posted_date }}
                 </div>
                 <div class="info-item">
                     <span class="label">Question:</span>

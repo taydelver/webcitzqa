@@ -30,9 +30,14 @@ class QuestionsController extends Controller
         $question->contact_email = $request->contact_email;
         $question->contact_name = $request->contact_name;
         $question->product_id = $request->product_id;
+        $question->product_name = $request->product_name;
+        $question->product_sku = $request->product_sku;
         $question->posted_date = date("Y-m-d");
         $question->storefront_id = $id;
         $question->save();
+        
+        $user = User::find(2);
+        $user->notify(new NewUserQuestion($question));
 
         return response()->json($question);
     }
@@ -54,8 +59,8 @@ class QuestionsController extends Controller
 
     public function testEmail(Request $request)
     {
-        $user = User::find(1);
-        $question = Question::find(7);
+        $user = User::find(2);
+        $question = Question::find(19);
         $user->notify(new NewUserQuestion($question));
 
         return response()->json($user);
