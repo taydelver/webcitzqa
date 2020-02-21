@@ -36,7 +36,7 @@ class QuestionsController extends Controller
         $question->storefront_id = $id;
         $question->save();
         
-        $user = User::find(2);
+        $user = User::find(1);
         $user->notify(new NewUserQuestion($question));
 
         return response()->json($question);
