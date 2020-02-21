@@ -24,4 +24,9 @@ class StorefrontController extends Controller
         // $storefront->save();
         return response()->json($storefront->id);
     }
+
+    public function test(Request $request)
+    {
+        return Storefront::all();
+    }
 }
