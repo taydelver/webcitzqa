@@ -18,6 +18,9 @@ class CreateQuestionsTable extends Migration
             $table->string('contact_email');
             $table->longText('content');
             $table->unsignedBigInteger('product_id');
+            $table->string('contact_name')->nullable();
+            $table->string('product_name')->nullable();
+            $table->string('product_sku')->nullable();
             $table->date('posted_date');
             $table->string('status')->default('pending');
             $table->unsignedBigInteger('storefront_id');
