@@ -16,6 +16,7 @@
 
                    <form action="{{route('storefront.create')}}" method="POST">
                         @csrf
+                        
                         <input type="text" name="name">
                         <button type="submit">Create</button>
                     </form>

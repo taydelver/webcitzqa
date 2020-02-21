@@ -12,10 +12,13 @@ class StorefrontController extends Controller
 {
     public function create(Request $request)
     {
-        $storefront = new Storefront;
-        $storefront->name = $request->input('name');
+        $storefront = Storefront::updateOrCreate(
+            ['name' => $request->input('name')]
+        );
+        // $storefront = new Storefront;
+        // $storefront->name = $request->input('name');
         // $storefront->api_token = Str::random(80),
-        $storefront->save();
+        // $storefront->save();
         // $token = $storefront->createToken($storefront->name)->accessToken;
         // $storefront->api_token = $token;
         // $storefront->save();
